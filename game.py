@@ -32,13 +32,12 @@ screen.blit(img4,(20,460))
 
 run=True
 while run:
-    for event in pygame.event.get():
-        if event.type==pygame.QUIT:
-            run=False
 
     #event trigger
     event=pygame.event.poll()
-    if event.type==pygame.MOUSEBUTTONDOWN:
+    if event.type==pygame.QUIT:
+        run=False
+    elif event.type==pygame.MOUSEBUTTONDOWN:
         pos=pygame.mouse.get_pos()
         pygame.draw.circle(screen,(100,200,155),(pos),25,25)
         pygame.display.update()
